@@ -1,8 +1,8 @@
-import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_application_1/card/rounded_card.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:bitsdojo_window/bitsdojo_window.dart';
+import 'package:flutter_application_1/card/rounded_card.dart';
 
 void main() {
   runApp(const App());
@@ -11,7 +11,7 @@ void main() {
     const initialSize = Size(400, 500);
     win.minSize = initialSize;
     win.alignment = Alignment.center;
-    win.title = "Віталік лох!!!";
+    win.title = "Угадай шо тут?!";
     win.show();
   });
 }
@@ -25,7 +25,7 @@ class App extends StatelessWidget {
         const SystemUiOverlayStyle(statusBarColor: Colors.white));
 
     return MaterialApp(
-      title: "Hello world",
+      title: "Секрет",
       home: Scaffold(
           backgroundColor: Colors.white,
           appBar: AppBar(
@@ -35,7 +35,7 @@ class App extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             title: Text(
-              "Hello there!",
+              "Напиши шось в поле!",
               style: GoogleFonts.gabriela(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,

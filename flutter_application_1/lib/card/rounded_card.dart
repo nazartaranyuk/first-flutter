@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:windows_notification/notification_message.dart';
+import 'package:windows_notification/windows_notification.dart';
 
 class RoundedCard extends StatelessWidget {
-  const RoundedCard({super.key});
+  RoundedCard({super.key});
+
+  final _winNotifyPlugin = WindowsNotification(applicationId: "АХАХАХАХАХ ти даун");
+  final NotificationMessage message = NotificationMessage.fromPluginTemplate(
+    "custom_id",
+    "АХХАХАХАХАХ тебе наєбали даун ахзхахахах!",
+    "Мені похуй шо ти там написав",
+    image: null,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +31,7 @@ class RoundedCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
-                "Hello",
+                "Напиши тут",
                 style: GoogleFonts.gabriela(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -32,7 +41,7 @@ class RoundedCard extends StatelessWidget {
               TextField(
                 decoration: const InputDecoration(
                     contentPadding: EdgeInsets.all(15.0),
-                    labelText: "Write here some text",
+                    labelText: "Напиши сюди шось!!!",
                     focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.black)),
                     border: OutlineInputBorder(
@@ -41,15 +50,7 @@ class RoundedCard extends StatelessWidget {
                     labelStyle: TextStyle(color: Colors.black)),
                 scrollPadding: const EdgeInsets.all(0),
                 onTap: () => {
-                  Fluttertoast.showToast(
-                    msg: "Message is edited",
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.BOTTOM,
-                    timeInSecForIosWeb: 1,
-                    backgroundColor: Colors.black,
-                    textColor: Colors.white,
-                    fontSize: 16.0,
-                  )
+                  _winNotifyPlugin.showNotificationPluginTemplate(message)
                 },
               )
             ],
@@ -68,7 +69,7 @@ class InputFieldForm extends StatelessWidget {
     return SingleChildScrollView(
       padding: EdgeInsets.fromLTRB(
           16.0, 16.0, 16.0, MediaQuery.of(context).viewInsets.bottom + 16.0),
-      child: const Column(
+      child: Column(
         children: [
           RoundedCard(),
         ],
