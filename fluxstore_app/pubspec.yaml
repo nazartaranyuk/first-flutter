@@ -64,6 +64,10 @@ flutter:
   assets:
     - assets/user_avatar.jpg
     - assets/notification_icon.svg
+    - assets/heart_icon.svg
+    - assets/heart_bpm_icon.svg
+    - assets/fire_icon.svg
+    - assets/todo_icon.svg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 

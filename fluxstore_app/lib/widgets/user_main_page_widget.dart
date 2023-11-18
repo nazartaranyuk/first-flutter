@@ -13,7 +13,7 @@ class UserMainPageWidget extends StatelessWidget {
       height: 56,
       child: Row(
         mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           const UserAvatarWidget(),
           const Padding(padding: EdgeInsets.only(right: 15)),
